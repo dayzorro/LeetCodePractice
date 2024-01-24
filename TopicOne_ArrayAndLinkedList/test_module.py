@@ -18,3 +18,11 @@ class TestmergeTwoLists(unittest.TestCase):
         list2 = ListNode([1,2,3,4])
         list3 = mergeTwoLists(list1,list2)
         list3.show()
+
+class TestmergeKAscLists(unittest.TestCase):
+    def test_base(self):
+        list1 = ListNode([1, 4, 5])
+        list2 = ListNode([1, 3, 4])
+        list3 = ListNode([2, 6])
+        list4 = mergeKAscLists([list1, list2,list3])
+        list4.show()

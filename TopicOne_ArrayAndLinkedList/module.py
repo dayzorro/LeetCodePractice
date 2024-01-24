@@ -8,6 +8,8 @@
 ------------      -------         --------    -----------
 2024/1/22         Pengcheng Ruan       1.0         None
 """
+import heapq
+
 from Definition import *
 
 
@@ -31,3 +33,24 @@ def mergeTwoLists(list1:ListNode,list2:ListNode)->ListNode:
             p.next = point2
 
     return dummy_node.next
+
+def mergeKAscLists(lists)->ListNode:
+    if (len(lists)<=0):
+        return None
+    dummy = ListNode([-1])
+    p = dummy
+    pq = []
+    for head in lists:
+            if head:
+                # heapq 是python自带的堆栈函数,可以用来创建最小堆
+                heapq.heappush(pq,head)
+    # 现在，pq 是一个最小堆，并且根据 ListNode 的 val 属性来排序
+    # 你可以通过 heapq.heappop(pq) 来获取最小元素，并按需要对堆进行操作
+    while pq:
+        node = heapq.heappop(pq)
+        p.next = node
+        if node.next:
+            heapq.heappush(pq, node.next)
+        p = p.next
+    merged_head = dummy.next
+    return merged_head

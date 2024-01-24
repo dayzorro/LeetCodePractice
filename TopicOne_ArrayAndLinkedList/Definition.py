@@ -31,5 +31,11 @@ class ListNode:
             print(ptr.val)
             ptr = ptr.next
 
+    # 定义比较方法，使得 ListNode 可以被比较
+    def __lt__(self, other):
+        return self.val < other.val
+
+
+
 
 
