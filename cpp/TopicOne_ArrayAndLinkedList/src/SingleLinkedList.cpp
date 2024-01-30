@@ -48,29 +48,6 @@ int SingleLinkedList::GetValue(){
 SingleLinkedList* SingleLinkedList::GetNext(){
     return this->next;
 }
-//SingleLinkedList* SingleLinkedList::MergeTwoSingleLinkedList(SingleLinkedList* list){
-//    auto* dummy = new SingleLinkedList(-1);
-//    SingleLinkedList* p = dummy;
-//    SingleLinkedList* p1 = this;
-//    SingleLinkedList* p2 = list;
-//    while(p1 != nullptr && p2 != nullptr){
-//        if(p1->value > p2->value) {
-//            p->next = p2;
-//            p2 = p2->next;
-//        }else{
-//            p->next=p1;
-//            p1=p1->next;
-//        }
-//        p = p->next;
-//    }
-//    if(p1 != nullptr){
-//        p->next = p1;
-//    }
-//    if(p2!= nullptr){
-//        p->next=p2;
-//    }
-//    return dummy->next;
-//}
 
 SingleLinkedList* SingleLinkedList::MergeTwoSingleLinkedList(SingleLinkedList* list) {
     auto* dummy = new SingleLinkedList(-1);
@@ -102,6 +79,7 @@ SingleLinkedList* SingleLinkedList::MergeTwoSingleLinkedList(SingleLinkedList* l
     }
 
     SingleLinkedList* result = dummy->next;
+    dummy->next = nullptr;
     delete dummy;
     return result;
 }

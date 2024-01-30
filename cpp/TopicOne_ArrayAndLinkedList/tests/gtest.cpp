@@ -45,15 +45,6 @@ TEST(SingleLinkedListTest, MergeLinkedList) {
     EXPECT_EQ(q, nullptr) << "Expected list is longer than merged list.";
     delete list4; // 安全地删除合并后的链表
 
-    // Clean up if necessary (depends on your implementation of MergeTwoSingleLinkedList)
-    // delete list4;
 }
-
-
 // 可以添加更多测试用例...
-
-//int main(int argc, char **argv) {
-//    ::testing::InitGoogleTest(&argc, argv);
-//    return RUN_ALL_TESTS();
-//}
 
